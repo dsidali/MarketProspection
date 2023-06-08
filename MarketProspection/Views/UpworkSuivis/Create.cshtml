@@ -15,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ProposalDate" class="control-label"></label>
-                <input asp-for="ProposalDate" class="form-control" />
+                <input asp-for="ProposalDate" class="form-control" value="@(DateTime.Now.ToString("yyyy-MM-dd HH:mm"))" />
                 <span asp-validation-for="ProposalDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,15 +35,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProjectLengthId" class="control-label"></label>
-                <select asp-for="ProjectLengthId" class ="form-control" asp-items="ViewBag.ProjectLengthId"></select>
+                <select asp-for="ProjectLengthId" class="form-select" asp-items="ViewBag.ProjectLengthId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="PricingTypeId" class="control-label"></label>
-                <select asp-for="PricingTypeId" class ="form-control" asp-items="ViewBag.PricingTypeId"></select>
+                <select asp-for="PricingTypeId" class="form-select" asp-items="ViewBag.PricingTypeId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ClientPricing" class="control-label"></label>
-                <input asp-for="ClientPricing" class="form-control" />
+                <input asp-for="ClientPricing" class="form-select" />
                 <span asp-validation-for="ClientPricing" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -53,12 +53,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="SubmittingProfileId" class="control-label"></label>
-                <select asp-for="SubmittingProfileId" class ="form-control" asp-items="ViewBag.SubmittingProfileId"></select>
+                <select asp-for="SubmittingProfileId" class="form-select" asp-items="ViewBag.SubmittingProfileId"></select>
             </div>
 
             <div class="form-group">
                 <label asp-for="TechnologyId" class="control-label"></label>
-                <select asp-for="TechnologyId" class ="form-control" asp-items="ViewBag.TechnologyId"></select>
+                <select asp-for="TechnologyId" class="form-select" asp-items="ViewBag.TechnologyId"></select>
             </div>
 
             <div class="form-group">
