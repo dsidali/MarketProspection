@@ -28,15 +28,15 @@
 
         public bool Viewed { get; set; } = false;
 
-        public DateTime? ViewDate { get; set; }
+        public DateTime? ViewDate { get; set; } = null;
 
         public bool Response { get; set; }
-        public DateTime? ResponseDate { get; set; }
+        public DateTime? ResponseDate { get; set; } = null;
 
         public bool Interview { get; set; }
-        public DateTime? InterviewDate { get; set; }
+        public DateTime? InterviewDate { get; set; } = null;
 
         public bool Hired { get; set; }
-        public DateTime? HireDate { get; set; }
+        public DateTime? HireDate { get; set; } = null;
     }
 }

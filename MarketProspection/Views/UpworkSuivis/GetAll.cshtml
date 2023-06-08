@@ -1,0 +1,169 @@
+﻿@model IEnumerable<MarketProspection.Models.UpworkSuivi>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="listprospect">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProposalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequiredConnects)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricingType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientPricing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pricing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubmittingProfile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Technology)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Viewed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Response)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResponseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Interview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InterviewDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HireDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProposalDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequiredConnects)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectLength.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricingType.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientPricing)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pricing)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmittingProfile.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Technology.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Viewed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ViewDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Response)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResponseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Interview)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InterviewDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hired)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HireDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+                    
+@section Scripts {
+    @*   @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }*@
+
+    <script>
+        $(document).ready(function () {
+            $("#listprospect").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+                order: [[0, 'desc']],
+             
+          
+                exportOptions: {
+                    rows: ':visible',
+                      
+                }
+            }).buttons().container().appendTo('#listprospect_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+
+}

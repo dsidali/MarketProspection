@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MarketProspection.Data;
+using MarketProspection.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MarketProspection.Data;
-using MarketProspection.Models;
 
 namespace MarketProspection.Controllers
 {
@@ -22,9 +18,28 @@ namespace MarketProspection.Controllers
         // GET: UpworkSuivis
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.UpworkSuivis.Include(u => u.PricingType).Include(u => u.ProjectLength).Include(u => u.SubmittingProfile).Include(u => u.Technology);
+            var applicationDbContext = _context.UpworkSuivis
+                .Include(u => u.PricingType)
+                .Include(u => u.ProjectLength)
+                .Include(u => u.SubmittingProfile)
+                .Include(u => u.Technology)
+                .OrderByDescending(e => e.Id) // Assuming there is an Id property for ordering
+                .Take(10);
             return View(await applicationDbContext.ToListAsync());
         }
+
+
+        public async Task<IActionResult> GetAll()
+        {
+            var applicationDbContext = _context.UpworkSuivis
+                .Include(u => u.PricingType)
+                .Include(u => u.ProjectLength)
+                .Include(u => u.SubmittingProfile)
+                .Include(u => u.Technology);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
+
 
         // GET: UpworkSuivis/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -51,10 +66,10 @@ namespace MarketProspection.Controllers
         // GET: UpworkSuivis/Create
         public IActionResult Create()
         {
-            ViewData["PricingTypeId"] = new SelectList(_context.PricingTypes, "Id", "Id");
-            ViewData["ProjectLengthId"] = new SelectList(_context.ProjectLengths, "Id", "Id");
-            ViewData["SubmittingProfileId"] = new SelectList(_context.SubmittingProfiles, "Id", "Id");
-            ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "Id");
+            ViewData["PricingTypeId"] = new SelectList(_context.PricingTypes, "Id", "Pricingtype");
+            ViewData["ProjectLengthId"] = new SelectList(_context.ProjectLengths, "Id", "Length");
+            ViewData["SubmittingProfileId"] = new SelectList(_context.SubmittingProfiles, "Id", "Profile");
+            ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "TechnologyName");
             return View();
         }
 
@@ -173,14 +188,14 @@ namespace MarketProspection.Controllers
             {
                 _context.UpworkSuivis.Remove(upworkSuivi);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UpworkSuiviExists(int id)
         {
-          return _context.UpworkSuivis.Any(e => e.Id == id);
+            return _context.UpworkSuivis.Any(e => e.Id == id);
         }
     }
 }

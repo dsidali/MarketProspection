@@ -35,7 +35,7 @@ namespace MarketProspection.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PricingTypes");
+                    b.ToTable("PricingTypes", (string)null);
                 });
 
             modelBuilder.Entity("MarketProspection.Models.ProjectLength", b =>
@@ -51,7 +51,7 @@ namespace MarketProspection.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProjectLengths");
+                    b.ToTable("ProjectLengths", (string)null);
                 });
 
             modelBuilder.Entity("MarketProspection.Models.SubmittingProfile", b =>
@@ -67,7 +67,7 @@ namespace MarketProspection.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SubmittingProfiles");
+                    b.ToTable("SubmittingProfiles", (string)null);
                 });
 
             modelBuilder.Entity("MarketProspection.Models.Technology", b =>
@@ -83,7 +83,7 @@ namespace MarketProspection.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Technologies");
+                    b.ToTable("Technologies", (string)null);
                 });
 
             modelBuilder.Entity("MarketProspection.Models.UpworkSuivi", b =>
@@ -161,7 +161,7 @@ namespace MarketProspection.Data.Migrations
 
                     b.HasIndex("TechnologyId");
 
-                    b.ToTable("UpworkSuivis");
+                    b.ToTable("UpworkSuivis", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

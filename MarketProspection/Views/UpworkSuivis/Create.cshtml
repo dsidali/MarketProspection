@@ -55,15 +55,18 @@
                 <label asp-for="SubmittingProfileId" class="control-label"></label>
                 <select asp-for="SubmittingProfileId" class ="form-control" asp-items="ViewBag.SubmittingProfileId"></select>
             </div>
+
+            <div class="form-group">
+                <label asp-for="TechnologyId" class="control-label"></label>
+                <select asp-for="TechnologyId" class ="form-control" asp-items="ViewBag.TechnologyId"></select>
+            </div>
+
             <div class="form-group">
                 <label asp-for="JobLink" class="control-label"></label>
                 <input asp-for="JobLink" class="form-control" />
                 <span asp-validation-for="JobLink" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TechnologyId" class="control-label"></label>
-                <select asp-for="TechnologyId" class ="form-control" asp-items="ViewBag.TechnologyId"></select>
-            </div>
+        
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Viewed" /> @Html.DisplayNameFor(model => model.Viewed)
