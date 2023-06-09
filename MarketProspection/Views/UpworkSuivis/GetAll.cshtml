@@ -12,71 +12,78 @@
 </p>
 <table class="table" id="listprospect">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProposalDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JobTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RequiredConnects)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectLength)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PricingType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ClientPricing)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pricing)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubmittingProfile)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JobLink)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Technology)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Viewed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ViewDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Response)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ResponseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Interview)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InterviewDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hired)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HireDate)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProposalDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredConnects)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricingType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientPricing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pricing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmittingProfile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Technology)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Viewed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ViewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Response)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interview)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InterviewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ProposalDate)
                 </td>
@@ -158,10 +165,6 @@
                 order: [[0, 'desc']],
              
           
-                exportOptions: {
-                    rows: ':visible',
-                      
-                }
             }).buttons().container().appendTo('#listprospect_wrapper .col-md-6:eq(0)');
         });
     </script>
