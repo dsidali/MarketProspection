@@ -1,0 +1,66 @@
+﻿
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="brand-link">
+        <img src="~/dist/img/skaalab2.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
+        @*<span class="brand-text font-weight-light">SAFHADID</span>*@
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="~/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">@User.Identity.Name</a>
+            </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+              
+
+
+                <li class="nav-item @ViewBag.rbopen">
+                    <a href="#" class="nav-link @ViewBag.rb">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Upwork
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="UpworkSuivis" asp-action="Create" class="nav-link @ViewBag.rbsrt">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Nouvelle entrée</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="UpworkSuivis" asp-action="Index" class="nav-link @ViewBag.rbrcpt">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lister</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+
+
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

@@ -25,6 +25,12 @@ namespace MarketProspection.Controllers
                 .Include(u => u.Technology)
                 .OrderByDescending(e => e.Id) // Assuming there is an Id property for ordering
                 .Take(10);
+
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "active";
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,6 +42,11 @@ namespace MarketProspection.Controllers
                 .Include(u => u.ProjectLength)
                 .Include(u => u.SubmittingProfile)
                 .Include(u => u.Technology);
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "active";
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -60,6 +71,11 @@ namespace MarketProspection.Controllers
                 return NotFound();
             }
 
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "active";
+
             return View(upworkSuivi);
         }
 
@@ -70,6 +86,14 @@ namespace MarketProspection.Controllers
             ViewData["ProjectLengthId"] = new SelectList(_context.ProjectLengths, "Id", "Length");
             ViewData["SubmittingProfileId"] = new SelectList(_context.SubmittingProfiles, "Id", "Profile");
             ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "TechnologyName");
+
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbsrt = "active";
+
+
+
             return View();
         }
 
@@ -90,6 +114,12 @@ namespace MarketProspection.Controllers
             ViewData["ProjectLengthId"] = new SelectList(_context.ProjectLengths, "Id", "Id", upworkSuivi.ProjectLengthId);
             ViewData["SubmittingProfileId"] = new SelectList(_context.SubmittingProfiles, "Id", "Id", upworkSuivi.SubmittingProfileId);
             ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "Id", upworkSuivi.TechnologyId);
+
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "rbsrt";
+
             return View(upworkSuivi);
         }
 
@@ -110,6 +140,13 @@ namespace MarketProspection.Controllers
             ViewData["ProjectLengthId"] = new SelectList(_context.ProjectLengths, "Id", "Id", upworkSuivi.ProjectLengthId);
             ViewData["SubmittingProfileId"] = new SelectList(_context.SubmittingProfiles, "Id", "Id", upworkSuivi.SubmittingProfileId);
             ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "Id", upworkSuivi.TechnologyId);
+
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "active";
+
+
             return View(upworkSuivi);
         }
 
@@ -149,6 +186,13 @@ namespace MarketProspection.Controllers
             ViewData["ProjectLengthId"] = new SelectList(_context.ProjectLengths, "Id", "Id", upworkSuivi.ProjectLengthId);
             ViewData["SubmittingProfileId"] = new SelectList(_context.SubmittingProfiles, "Id", "Id", upworkSuivi.SubmittingProfileId);
             ViewData["TechnologyId"] = new SelectList(_context.Technologies, "Id", "Id", upworkSuivi.TechnologyId);
+
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "active";
+
+
             return View(upworkSuivi);
         }
 
@@ -170,6 +214,10 @@ namespace MarketProspection.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.rbopen = "menu-open";
+            ViewBag.rb = "active";
+            ViewBag.rbrcpt = "active";
 
             return View(upworkSuivi);
         }
